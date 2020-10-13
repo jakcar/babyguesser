@@ -1,17 +1,17 @@
 <template>
   <div class="flex-grow mx-auto container p-8 text-2xl">
-    <MainContent />
+    <Rules />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import MainContent from '@/components/MainContent.vue'
+import Rules from '@/components/Rules.vue'
 
 export default {
   name: 'Home',
   components: {
-    MainContent
+    Rules
   }
 }
 </script>
