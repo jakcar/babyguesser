@@ -1,4 +1,4 @@
-let participants = [
+const participants = [
   {
     participant: 'Jakob',
     gender: 'female',
@@ -218,7 +218,7 @@ function findMinimumIndexes(array) {
   let min = Math.min.apply(Math, array)
   let indexes = []
 
-  array.forEach(function(item, idx, arr) {
+  array.forEach(function(item, idx) {
     if (item === min) {
       indexes.push(idx)
     }
