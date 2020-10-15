@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-grow mx-auto container p-8 text-2xl">
+  <div class="flex-grow mx-auto container p-8 ">
     <Rules />
   </div>
 </template>
