@@ -1,31 +1,97 @@
 <template>
   <div>
+    <div class="w-full bg-green-400  rounded-tl rounded-tr shadow py-1 text-xl">
+      Facit
+    </div>
     <div
-      class="grid grid-cols-1 sm:grid-cols-5 text-xl border rounded shadow mb-4 p-2"
+      class="grid grid-cols-1 sm:grid-cols-5 border-l border-r border-b rounded-bl rounded-br shadow-md mb-4 p-2 text-gray-700"
     >
-      <div>Kön: {{ correct.gender }}</div>
-      <div>Vikt: {{ correct.weigth }}</div>
-      <div>Längd: {{ correct.length }}</div>
-      <div>Dag: {{ format_day(correct.day) }}</div>
-      <div>Tid: {{ format_time(correct.time) }}</div>
+      <div class="flex m-auto my-2 w-full">
+        <div class="w-1/2 sm:text-right sm:pr-2">
+          <font-awesome-icon icon="venus-mars" />
+        </div>
+        <div class="w-1/2 sm:text-left">{{ correct.gender }}</div>
+      </div>
+      <div class="flex m-auto my-2 w-full">
+        <div class="w-1/2 sm:text-right sm:pr-2">
+          <font-awesome-icon icon="balance-scale-left" />
+        </div>
+        <div class="w-1/2 sm:text-left">{{ correct.weigth }} g</div>
+      </div>
+      <div class="flex m-auto my-2 w-full">
+        <div class="w-1/2 sm:text-right sm:pr-2">
+          <font-awesome-icon icon="ruler" />
+        </div>
+        <div class="w-1/2 sm:text-left">{{ correct.length }} cm</div>
+      </div>
+      <div class="flex m-auto my-2 w-full">
+        <div class="w-1/2 sm:text-right sm:pr-2">
+          <font-awesome-icon icon="calendar-day" />
+        </div>
+        <div class="w-1/2 sm:text-left">
+          {{ format_day(correct.day) }}
+        </div>
+      </div>
+      <div class="flex m-auto my-2 w-full">
+        <div class="w-1/2 sm:text-right sm:pr-2">
+          <font-awesome-icon icon="clock" />
+        </div>
+        <div class="w-1/2 sm:text-left">{{ format_time(correct.time) }}</div>
+      </div>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xl">
       <div
         v-for="participant in participants"
         :key="participant.participant"
-        class=" border rounded shadow"
+        class=" border rounded shadow-md"
       >
-        <h2 class="bg-gray-200 text-2xl mb-2 p-1">
+        <h2 class="bg-gray-200 text-xl p-1 pb-2">
           {{ participant.participant }}
         </h2>
-        <ul>
-          <li>Kön: {{ participant.gender }}</li>
-          <li>Vikt: {{ participant.weigth }}</li>
-          <li>Längd: {{ participant.length }}</li>
-          <li>Dag: {{ format_day(participant.day) }}</li>
-          <li>Tid: {{ format_time(participant.time) }}</li>
-          <li>Poäng: {{ participant.points }}</li>
-        </ul>
+        <table class="w-full mb-4 text-gray-700">
+          <tr>
+            <td class="border border-l-0 px-4 py-2 w-1/2">
+              <font-awesome-icon icon="venus-mars" />
+            </td>
+            <td class="border border-r-0 px-4 py-2">
+              {{ participant.gender }}
+            </td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="border border-l-0 px-4 py-2">
+              <font-awesome-icon icon="balance-scale-left" />
+            </td>
+            <td class="border border-r-0 px-4 py-2">
+              {{ participant.weigth }} g
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-l-0 px-4 py-2">
+              <font-awesome-icon icon="ruler" />
+            </td>
+            <td class="border border-r-0 px-4 py-2">
+              {{ participant.length }} cm
+            </td>
+          </tr>
+          <tr class="bg-gray-100">
+            <td class="border border-l-0 px-4 py-2">
+              <font-awesome-icon icon="calendar-day" />
+            </td>
+            <td class="border border-r-0 px-4 py-2">
+              {{ format_day(participant.day) }}
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-l-0 px-4 py-2">
+              <font-awesome-icon icon="clock" />
+            </td>
+            <td class="border border-r-0 px-4 py-2">
+              {{ format_time(participant.time) }}
+            </td>
+          </tr>
+        </table>
+
+        <h2 class="text-2xl">Poäng: {{ participant.points }}</h2>
         <ul class="py-4 text-base">
           <li v-for="comment in participant.comments" :key="comment">
             {{ comment }}
@@ -103,14 +169,124 @@ export default {
           time: moment('2021-02-20 11:00'),
           comments: [],
           points: 0
+        },
+        {
+          participant: 'Sarah',
+          gender: 'F',
+          weigth: 3400,
+          length: 50,
+          day: moment('2021-02-17'),
+          time: moment('2021-02-20 06:00'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Adam',
+          gender: 'P',
+          weigth: 3535,
+          length: 52,
+          day: moment('2021-02-20'),
+          time: moment('2021-02-20 05:20'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Bernhard',
+          gender: 'P',
+          weigth: 3526,
+          length: 51,
+          day: moment('2021-02-25'),
+          time: moment('2021-02-20 04:30'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Randi',
+          gender: 'F',
+          weigth: 3200,
+          length: 49,
+          day: moment('2021-02-22'),
+          time: moment('2021-02-20 02:15'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Jakob',
+          gender: 'F',
+          weigth: 3079,
+          length: 49,
+          day: moment('2021-02-23'),
+          time: moment('2021-02-20 04:20'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Sanna',
+          gender: 'F',
+          weigth: 3500,
+          length: 52,
+          day: moment('2021-02-20'),
+          time: moment('2021-02-20 22:10'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Axel',
+          gender: 'P',
+          weigth: 3700,
+          length: 53,
+          day: moment('2021-02-25'),
+          time: moment('2021-02-20 05:00'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Maria',
+          gender: 'P',
+          weigth: 3600,
+          length: 51,
+          day: moment('2021-02-24'),
+          time: moment('2021-02-20 20:30'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Ylva',
+          gender: 'F',
+          weigth: 3700,
+          length: 53,
+          day: moment('2021-02-26'),
+          time: moment('2021-02-20 16:00'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Anna',
+          gender: 'P',
+          weigth: 3200,
+          length: 50,
+          day: moment('2021-02-21'),
+          time: moment('2021-02-20 18:37'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Linus',
+          gender: 'H',
+          weigth: 4200,
+          length: 66.6,
+          day: moment('2021-02-25'),
+          time: moment('2021-02-20 01:01'),
+          comments: [],
+          points: 0
         }
       ],
       correct: {
         gender: 'F',
-        weigth: 3560,
-        length: 50,
-        day: moment('2021-02-14'),
-        time: moment('2021-02-20 18:25')
+        weigth: 3571,
+        length: 54,
+        day: moment('2021-02-25'),
+        time: moment('2021-02-20 18:15')
       },
       // correct: {
       //   gender: null,
@@ -129,41 +305,41 @@ export default {
     this.participants.forEach(guess => {
       if (guess.gender == this.correct.gender) {
         guess.points += 1
-        guess.comments.push('En poäng för rätt kön.')
+        guess.comments.push('+1 poäng för rätt kön.')
       }
       if (guess.length == this.correct.length) {
-        guess.points += 1
-        guess.comments.push('En poäng för rätt längd.')
+        guess.points += 2
+        guess.comments.push('+2 poäng för rätt längd.')
         this.guessedCorrectLength = true
       }
 
       if (this.diffDays(guess.day) == 0) {
         guess.points += 2
-        guess.comments.push('Två poäng för rätt dag.')
+        guess.comments.push('+2 poäng för rätt dag.')
         this.guessedCorrectDay = true
       }
       if (guess.weigth == this.correct.weigth) {
-        guess.points += 3
-        guess.comments.push('Tre poäng för rätt vikt.')
+        guess.points += 4
+        guess.comments.push('+4 poäng för rätt vikt.')
         this.guessedCorrectWeight = true
       } else if (Math.abs(guess.weigth - this.correct.weigth) < 11) {
         guess.points += 2
-        guess.comments.push('Två poäng för vikt inom 10 gram.')
+        guess.comments.push('+2 poäng för vikt inom 10 gram.')
       } else if (Math.abs(guess.weigth - this.correct.weigth) < 51) {
         guess.points += 1
-        guess.comments.push('En poäng för vikt inom 30 gram.')
+        guess.comments.push('+1 poäng för vikt inom 50 gram.')
       }
 
       if (this.diffTime(guess.time) == 0) {
-        guess.points += 3
-        guess.comments.push('Tre poäng för rätt tid.')
+        guess.points += 4
+        guess.comments.push('+4 poäng för rätt tid.')
         this.guessedCorrectTime = true
       } else if (this.diffTime(guess.time) < 11) {
         guess.points += 2
-        guess.comments.push('Två poäng för tid inom 10 minuter.')
+        guess.comments.push('+2 poäng för tid inom 10 minuter.')
       } else if (this.diffTime(guess.time) < 31) {
         guess.points += 1
-        guess.comments.push('En poäng för tid inom 30 minuter.')
+        guess.comments.push('+1 poäng för tid inom 30 minuter.')
       }
     })
 
@@ -173,7 +349,7 @@ export default {
       )
       this.findMinimumIndexes(weights).forEach(idx => {
         this.participants[idx].points += 1
-        this.participants[idx].comments.push('En poäng för närmast vikt.')
+        this.participants[idx].comments.push('+1 poäng för närmast vikt.')
       })
     }
 
@@ -183,7 +359,7 @@ export default {
       )
       this.findMinimumIndexes(lengths).forEach(idx => {
         this.participants[idx].points += 1
-        this.participants[idx].comments.push('En poäng för närmast längd.')
+        this.participants[idx].comments.push('+1 poäng för närmast längd.')
       })
     }
 
@@ -191,7 +367,7 @@ export default {
       let days = this.participants.map(x => Math.abs(this.diffDays(x.day)))
       this.findMinimumIndexes(days).forEach(idx => {
         this.participants[idx].points += 1
-        this.participants[idx].comments.push('En poäng för närmast dag.')
+        this.participants[idx].comments.push('+1 poäng för närmast dag.')
       })
     }
 
@@ -199,7 +375,7 @@ export default {
       let times = this.participants.map(x => this.diffTime(x.time))
       this.findMinimumIndexes(times).forEach(idx => {
         this.participants[idx].points += 1
-        this.participants[idx].comments.push('En poäng för närmast tid.')
+        this.participants[idx].comments.push('+1 poäng för närmast tid.')
       })
     }
 

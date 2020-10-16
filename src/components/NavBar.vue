@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-teal-800 mb-3"
+    class="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-gray-700 mb-3"
   >
     <div
       class="container px-4 mx-auto flex flex-wrap items-center justify-between"
@@ -12,6 +12,11 @@
           class="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white"
           href="#pablo"
         >
+          <font-awesome-icon
+            icon="baby-carriage"
+            size="lg"
+            class="text-white mr-2"
+          />
           <router-link to="/">BABYGUESSER</router-link>
         </a>
         <div class="block lg:hidden">
