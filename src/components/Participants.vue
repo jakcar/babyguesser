@@ -283,7 +283,7 @@ export default {
       ],
       correct: {
         gender: 'F',
-        weigth: 3571,
+        weigth: 3570,
         length: 54,
         day: moment('2021-02-25'),
         time: moment('2021-02-20 18:15')
