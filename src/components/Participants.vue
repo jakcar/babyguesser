@@ -10,25 +10,32 @@
         <div class="w-1/2 sm:text-right sm:pr-2">
           <font-awesome-icon icon="venus-mars" />
         </div>
-        <div class="w-1/2 sm:text-left">{{ correct.gender }}</div>
+        <div class="w-1/2 sm:text-left">
+          <span v-if="!correct.gender">TBA</span>{{ correct.gender }}
+        </div>
       </div>
       <div class="flex m-auto my-2 w-full">
         <div class="w-1/2 sm:text-right sm:pr-2">
           <font-awesome-icon icon="balance-scale-left" />
         </div>
-        <div class="w-1/2 sm:text-left">{{ correct.weigth }} g</div>
+        <div class="w-1/2 sm:text-left">
+          <span v-if="!correct.weigth">TBA</span>{{ correct.weigth }}
+        </div>
       </div>
       <div class="flex m-auto my-2 w-full">
         <div class="w-1/2 sm:text-right sm:pr-2">
           <font-awesome-icon icon="ruler" />
         </div>
-        <div class="w-1/2 sm:text-left">{{ correct.length }} cm</div>
+        <div class="w-1/2 sm:text-left">
+          <span v-if="!correct.length">TBA</span>{{ correct.length }}
+        </div>
       </div>
       <div class="flex m-auto my-2 w-full">
         <div class="w-1/2 sm:text-right sm:pr-2">
           <font-awesome-icon icon="calendar-day" />
         </div>
         <div class="w-1/2 sm:text-left">
+          <span v-if="!correct.day">TBA</span>
           {{ format_day(correct.day) }}
         </div>
       </div>
@@ -36,7 +43,9 @@
         <div class="w-1/2 sm:text-right sm:pr-2">
           <font-awesome-icon icon="clock" />
         </div>
-        <div class="w-1/2 sm:text-left">{{ format_time(correct.time) }}</div>
+        <div class="w-1/2 sm:text-left">
+          <span v-if="!correct.time">TBA</span>{{ format_time(correct.time) }}
+        </div>
       </div>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xl">
@@ -111,152 +120,12 @@ export default {
     return {
       participants: [
         {
-          participant: 'Julia',
-          gender: 'F',
-          weigth: 3650,
-          length: 51,
-          day: moment('2021-02-15'),
-          time: moment('2021-02-20 18:06'),
-          comments: [],
-          points: 0
-        },
-        {
-          participant: 'Mats',
-          gender: 'F',
-          weigth: 3333,
-          length: 50,
-          day: moment('2021-02-28'),
-          time: moment('2021-02-20 08:20'),
-          comments: [],
-          points: 0
-        },
-        {
-          participant: 'Villiam',
-          gender: 'P',
-          weigth: 3317,
-          length: 48,
-          day: moment('2021-02-12'),
-          time: moment('2021-02-20 13:37'),
-          comments: [],
-          points: 0
-        },
-        {
-          participant: 'Liselotte',
-          gender: 'F',
-          weigth: 3720,
-          length: 50,
-          day: moment('2021-02-02'),
-          time: moment('2021-02-20 12:25'),
-          comments: [],
-          points: 0
-        },
-        {
-          participant: 'Patrik',
-          gender: 'F',
-          weigth: 3110,
-          length: 49,
-          day: moment('2021-03-01'),
-          time: moment('2021-02-20 14:32'),
-          comments: [],
-          points: 0
-        },
-        {
-          participant: 'Viggo',
-          gender: 'P',
-          weigth: 3570,
-          length: 50,
-          day: moment('2021-02-09'),
-          time: moment('2021-02-20 11:00'),
-          comments: [],
-          points: 0
-        },
-        {
-          participant: 'Sarah',
-          gender: 'F',
-          weigth: 3400,
-          length: 50,
-          day: moment('2021-02-17'),
-          time: moment('2021-02-20 06:00'),
-          comments: [],
-          points: 0
-        },
-        {
           participant: 'Adam',
           gender: 'P',
           weigth: 3535,
           length: 52,
           day: moment('2021-02-20'),
           time: moment('2021-02-20 05:20'),
-          comments: [],
-          points: 0
-        },
-        {
-          participant: 'Bernhard',
-          gender: 'P',
-          weigth: 3526,
-          length: 51,
-          day: moment('2021-02-25'),
-          time: moment('2021-02-20 04:30'),
-          comments: [],
-          points: 0
-        },
-        {
-          participant: 'Randi',
-          gender: 'F',
-          weigth: 3200,
-          length: 49,
-          day: moment('2021-02-22'),
-          time: moment('2021-02-20 02:15'),
-          comments: [],
-          points: 0
-        },
-        {
-          participant: 'Jakob',
-          gender: 'F',
-          weigth: 3079,
-          length: 49,
-          day: moment('2021-02-23'),
-          time: moment('2021-02-20 04:20'),
-          comments: [],
-          points: 0
-        },
-        {
-          participant: 'Sanna',
-          gender: 'F',
-          weigth: 3500,
-          length: 52,
-          day: moment('2021-02-20'),
-          time: moment('2021-02-20 22:10'),
-          comments: [],
-          points: 0
-        },
-        {
-          participant: 'Axel',
-          gender: 'P',
-          weigth: 3700,
-          length: 53,
-          day: moment('2021-02-25'),
-          time: moment('2021-02-20 05:00'),
-          comments: [],
-          points: 0
-        },
-        {
-          participant: 'Maria',
-          gender: 'P',
-          weigth: 3600,
-          length: 51,
-          day: moment('2021-02-24'),
-          time: moment('2021-02-20 20:30'),
-          comments: [],
-          points: 0
-        },
-        {
-          participant: 'Ylva',
-          gender: 'F',
-          weigth: 3700,
-          length: 53,
-          day: moment('2021-02-26'),
-          time: moment('2021-02-20 16:00'),
           comments: [],
           points: 0
         },
@@ -271,6 +140,46 @@ export default {
           points: 0
         },
         {
+          participant: 'Axel',
+          gender: 'P',
+          weigth: 3700,
+          length: 53,
+          day: moment('2021-02-25'),
+          time: moment('2021-02-20 05:00'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Bernhard',
+          gender: 'P',
+          weigth: 3526,
+          length: 51,
+          day: moment('2021-02-25'),
+          time: moment('2021-02-20 04:30'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Jakob',
+          gender: 'F',
+          weigth: 3079,
+          length: 49,
+          day: moment('2021-02-23'),
+          time: moment('2021-02-20 04:20'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Julia',
+          gender: 'F',
+          weigth: 3650,
+          length: 51,
+          day: moment('2021-02-15'),
+          time: moment('2021-02-20 18:06'),
+          comments: [],
+          points: 0
+        },
+        {
           participant: 'Linus',
           gender: 'H',
           weigth: 4200,
@@ -279,22 +188,122 @@ export default {
           time: moment('2021-02-20 01:01'),
           comments: [],
           points: 0
+        },
+        {
+          participant: 'Liselotte',
+          gender: 'F',
+          weigth: 3720,
+          length: 50,
+          day: moment('2021-02-02'),
+          time: moment('2021-02-20 12:25'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Maria',
+          gender: 'P',
+          weigth: 3600,
+          length: 51,
+          day: moment('2021-02-24'),
+          time: moment('2021-02-20 20:30'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Mats',
+          gender: 'F',
+          weigth: 3333,
+          length: 50,
+          day: moment('2021-02-28'),
+          time: moment('2021-02-20 08:20'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Patrik',
+          gender: 'F',
+          weigth: 3110,
+          length: 49,
+          day: moment('2021-03-01'),
+          time: moment('2021-02-20 14:32'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Randi',
+          gender: 'F',
+          weigth: 3200,
+          length: 49,
+          day: moment('2021-02-22'),
+          time: moment('2021-02-20 02:15'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Sanna',
+          gender: 'F',
+          weigth: 3500,
+          length: 52,
+          day: moment('2021-02-20'),
+          time: moment('2021-02-20 22:10'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Sarah',
+          gender: 'F',
+          weigth: 3400,
+          length: 50,
+          day: moment('2021-02-17'),
+          time: moment('2021-02-20 06:00'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Viggo',
+          gender: 'P',
+          weigth: 3570,
+          length: 50,
+          day: moment('2021-02-09'),
+          time: moment('2021-02-20 11:00'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Villiam',
+          gender: 'P',
+          weigth: 3317,
+          length: 48,
+          day: moment('2021-02-12'),
+          time: moment('2021-02-20 13:37'),
+          comments: [],
+          points: 0
+        },
+        {
+          participant: 'Ylva',
+          gender: 'F',
+          weigth: 3700,
+          length: 53,
+          day: moment('2021-02-26'),
+          time: moment('2021-02-20 16:00'),
+          comments: [],
+          points: 0
         }
       ],
-      correct: {
-        gender: 'F',
-        weigth: 3570,
-        length: 54,
-        day: moment('2021-02-25'),
-        time: moment('2021-02-20 18:15')
-      },
       // correct: {
-      //   gender: null,
-      //   weigth: null,
-      //   length: null,
-      //   day: null,
-      //   time: null
+      //   gender: 'F',
+      //   weigth: 3570,
+      //   length: 54,
+      //   day: moment('2021-02-25'),
+      //   time: moment('2021-02-20 18:15')
       // },
+      correct: {
+        gender: null,
+        weigth: null,
+        length: null,
+        day: null,
+        time: null
+      },
       guessedCorrectLength: false,
       guessedCorrectWeight: false,
       guessedCorrectDay: false,
