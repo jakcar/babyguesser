@@ -290,19 +290,12 @@ export default {
           points: 0
         }
       ],
-      // correct: {
-      //   gender: 'F',
-      //   weigth: 3570,
-      //   length: 54,
-      //   day: moment('2021-02-25'),
-      //   time: moment('2021-02-20 18:15')
-      // },
       correct: {
-        gender: null,
-        weigth: null,
-        length: null,
-        day: null,
-        time: null
+        gender: 'F',
+        weigth: 4180,
+        length: 51,
+        day: moment('2021-02-14'),
+        time: moment('2021-02-14 23:07')
       },
       guessedCorrectLength: false,
       guessedCorrectWeight: false,
